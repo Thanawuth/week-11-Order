@@ -56,6 +56,7 @@ export class OrderController {
 
   @MessagePattern('order_completed')
   async handleOrderCompleted(@Payload() data: any, @Ctx() context: RmqContext) {
+    console.log('Complete Order');
     const channel = context.getChannelRef();
     const originalMsg = context.getMessage();
     data.status = 'completed';
@@ -65,6 +66,7 @@ export class OrderController {
 
   @MessagePattern('order_canceled')
   async handleOrderCanceled(@Payload() data: any, @Ctx() context: RmqContext) {
+    console.log('Canceled order');
     const channel = context.getChannelRef();
     const originalMsg = context.getMessage();
     data.status = 'canceled';
