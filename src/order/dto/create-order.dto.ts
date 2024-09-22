@@ -6,7 +6,4 @@ export class CreateOrderDto {
 
   @ApiProperty()
   email: string;
-
-  @ApiProperty()
-  status: string;
 }

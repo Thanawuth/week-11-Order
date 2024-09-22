@@ -9,7 +9,7 @@ import { Order } from './order/entities/order.entity';
 @Module({
   imports: [
     TypeOrmModule.forRoot({
-      type: 'mysql',
+      type: 'sqlite',
       database: 'order.db',
       entities: [Order],
       synchronize: true,
